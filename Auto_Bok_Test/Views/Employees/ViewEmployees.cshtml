@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Auto_Bok_Test.Models.Employee>
+
+@{
+    ViewData["Title"] = "Team";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <ul class="EmployeeList">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="Employee">
+                    <hr />
+                    <img src="~/images/PassBild.png"  />
+                    <div class="EmployeeData">
+                        <h4>@Html.DisplayFor(modelitem => item.FirstName) @Html.DisplayFor(modelitem => item.LastName)</h4>
+                        <p>@Html.DisplayFor(modelItem => item.Position)</p>                        
+                        <p class="EmployeeDescription">@Html.DisplayFor(modelItem => item.Description)</p>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
